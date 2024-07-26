@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebración 48K Seguidores</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .message {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .teddy {
+            position: relative;
+            width: 120px; /* Tamaño reducido */
+            height: 150px; /* Tamaño reducido */
+        }
+
+        .teddy div {
+            position: absolute;
+        }
+
+        .right-ear, .left-ear {
+            background-color: rgb(246, 84, 10);
+            width: 50px; /* Tamaño reducido */
+            height: 50px; /* Tamaño reducido */
+            border-radius: 50%;
+            box-shadow: 0 0 0 10px rgb(241, 145, 100) inset;
+        }
+
+        .right-ear {
+            left: 10px;
+        }
+
+        .left-ear {
+            right: 10px;
+        }
+
+        .head {
+            background-color: rgb(241, 145, 100);
+            width: 100px; /* Tamaño reducido */
+            height: 100px; /* Tamaño reducido */
+            border-radius: 50%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 1;
+        }
+
+        .right-eye, .left-eye {
+            background-color: rgb(255, 255, 255);
+            width: 12px; /* Tamaño reducido */
+            height: 12px; /* Tamaño reducido */
+            border-radius: 50%;
+            box-shadow: 2px -2px 0 4px inset;
+        }
+
+        .right-eye {
+            top: 35px;
+            left: 30px;
+            animation: blink 2s ease-in-out infinite; /* Animación de guiño */
+        }
+
+        .left-eye {
+            top: 35px;
+            right: 30px;
+        }
+
+        .mouth-area {
+            background-color: rgb(246, 84, 10);
+            width: 60px; /* Tamaño reducido */
+            height: 45px; /* Tamaño reducido */
+            border-radius: 50%;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .nose {
+            background-color: rgb(0, 0, 0);
+            width: 20px; /* Tamaño reducido */
+            height: 15px; /* Tamaño reducido */
+            border-radius: 50%;
+            top: 5px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .nose-inner {
+            width: 5px;
+            height: 4px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            top: 3px;
+            right: 7px;
+        }
+
+        .right-cheek, .left-cheek {
+            width: 15px; /* Tamaño reducido */
+            height: 15px; /* Tamaño reducido */
+            border-radius: 50%;
+            box-shadow: -2px -2px 0 0 rgb(115, 80, 45) inset;
+            bottom: 10px;
+        }
+
+        .right-cheek {
+            left: 10px;
+        }
+
+        .left-cheek {
+            right: 10px;
+        }
+
+        .body {
+            background-color: rgb(241, 145, 100);
+            width: 120px; /* Tamaño reducido */
+            height: 140px; /* Tamaño reducido */
+            border-radius: 50%;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            box-shadow: 0 0 0 20px rgb(244, 100, 33) inset;
+            position: relative;
+        }
+
+        .right-arm, .left-arm {
+            width: 40px; /* Tamaño reducido */
+            height: 30px; /* Tamaño reducido */
+            background-color: rgb(244, 100, 33);
+            border-radius: 30px 0 0 0 / 30px 0 0 0;
+        }
+
+        .right-arm {
+            top: 80px;
+            left: 0;
+        }
+
+        .left-arm {
+            top: 80px;
+            right: 0;
+            border-radius: 0 30px 0 0 / 0 30px 0 0;
+        }
+
+        .right-arm .paw, .left-arm .paw {
+            background: rgb(246, 84, 10);
+            width: 50px; /* Tamaño reducido */
+            height: 30px; /* Tamaño reducido */
+            border-radius: 50%;
+            box-shadow: 0 5px 0 5px rgb(226, 124, 76) inset;
+        }
+
+        .right-arm .paw {
+            top: 20px;
+            left: 0;
+        }
+
+        .left-arm .paw {
+            top: 20px;
+            right: 0;
+        }
+
+        .right-leg, .left-leg {
+            width: 50px; /* Tamaño reducido */
+            height: 40px; /* Tamaño reducido */
+            background: rgb(246, 84, 10);
+            border-radius: 25px 25px 0 0 / 40px 40px 0 0;
+            bottom: 20px;
+        }
+
+        .right-leg {
+            left: 10px;
+        }
+
+        .left-leg {
+            right: 10px;
+        }
+
+        .foot {
+            width: 100%;
+            height: 40px; /* Tamaño reducido */
+            background: rgb(246, 84, 10);
+            box-shadow: 0 5px 0 5px rgb(226, 124, 76) inset;
+            border-radius: 50%;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                height: 12px;
+            }
+            50% {
+                height: 0;
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+        }
+
+        .heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px; /* Tamaño reducido */
+            height: 45px; /* Tamaño reducido */
+            background-color: red;
+            transform: translate(-50%, -50%);
+            clip-path: path('M50 15C61.93 3.07 86.36 7.14 91.23 27.14C95.7 44.9 78.63 57.43 50 85C21.37 57.43 4.3 44.9 8.77 27.14C13.64 7.14 38.07 3.07 50 15Z');
+            animation: heartbeat 1s infinite;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #eee530, 0 0 40px #eee530, 0 0 50px #eee530, 0 0 60px #eee530, 0 0 70px #eee530;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .teddy {
+                width: 100px;
+                height: 130px;
+            }
+
+            .right-ear, .left-ear {
+                width: 40px;
+                height: 40px;
+            }
+
+            .head {
+                width: 80px;
+                height: 80px;
+            }
+
+            .right-eye, .left-eye {
+                width: 10px;
+                height: 10px;
+            }
+
+            .mouth-area {
+                width: 50px;
+                height: 40px;
+            }
+
+            .nose {
+                width: 15px;
+                height: 12px;
+            }
+
+            .nose-inner {
+                width: 3px;
+                height: 2px;
+            }
+
+            .right-cheek, .left-cheek {
+                width: 10px;
+                height: 10px;
+            }
+
+            .body {
+                width: 90px;
+                height: 110px;
+            }
+
+            .right-arm, .left-arm {
+                width: 30px;
+                height: 20px;
+            }
+
+            .right-arm .paw, .left-arm .paw {
+                width: 40px;
+                height: 20px;
+            }
+
+            .right-leg, .left-leg {
+                width: 35px;
+                height: 25px;
+            }
+
+            .foot {
+                height: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+  <h1 class="mb-4">
+    <div class="word-container"><span>🎉🥳Felicidades</span></div>
+    <div class="word-container"><span>Pau💎</span></div>
+    <div class="word-container"><span>Por</span></div>
+    <div class="word-container"><span>Llegar</span></div>
+    <div class="word-container"><span>A</span></div>
+    <div class="word-container"><span>Los</span></div>
+    <div class="word-container"><span>47K</span></div>
+    <div class="word-container"><span>En</span></div>
+    <div class="word-container"><span>Tiktok🎉🥳</span></div>
+  </h1>
+  <p id="motivational-message" class="motivational-message" style="display: none;">"¡Sigue haciendo lo que amas y alcanzarás aún más éxitos! 🚀🌟",
+      "Cada paso te acerca más a tus metas. ¡Felicidades! 💪🔥",
+      "Tu creatividad y dedicación son la clave del éxito. ¡Celebra cada logro! 🎉💎"</p>
+</div>
+        <div class="teddy">
+            <div class="right-ear"></div>
+            <div class="left-ear"></div>
+            <div class="head">
+                <div class="right-eye"></div>
+                <div class="left-eye"></div>
+                <div class="nose">
+                    <div class="nose-inner"></div>
+                </div>
+                <div class="mouth-area"></div>
+                <div class="right-cheek"></div>
+                <div class="left-cheek"></div>
+            </div>
+            <div class="body">
+                <div class="right-arm">
+                    <div class="paw"></div>
+                </div>
+                <div class="left-arm">
+                    <div class="paw"></div>
+                </div>
+                <div class="right-leg">
+                    <div class="foot"></div>
+                </div>
+                <div class="left-leg">
+                    <div class="foot"></div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+</body>
+</html>
